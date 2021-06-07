@@ -71,6 +71,14 @@ public class Hero {
         return instances;
     }
 
+    public static Hero findById(int id){
+        return instances.get(id-1);
+    }
+
+    public void updateName(String newName) {
+        this.name = newName;
+    }
+
     public static void clearAllHeroes(){
         instances.clear();
     }

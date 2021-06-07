@@ -4,8 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class HeroTest {
 
@@ -74,6 +73,27 @@ class HeroTest {
     }
 
     @Test
+    public void findReturnsCorrectHero() throws Exception{
+        Hero hero = setUpNewHero();
+        assertEquals(1,Hero.findById(hero.getId()).getId());
+    }
+
+    @Test
+    public void findReturnsCorrectHeroWhenMoreThanOneHeroesExists() throws Exception{
+        Hero hero = setUpNewHero();
+        Hero anotherHero = new Hero("Odero",14,"Light","Eyes");
+        assertEquals(2,Hero.findById(anotherHero.getId()).getId());
+    }
+
+    @Test
+    public void updateHeroName() throws Exception {
+        Hero hero = setUpNewHero();
+        String formerName = hero.getName();
+        hero.updateName("Otieno");
+        assertNotEquals(formerName, hero.getName());
+    }
+
+    @Test
     public void deleteDeletesASpecificHero() throws Exception {
         Hero hero = setUpNewHero();
         Hero anotherHero = new Hero("Odero",14,"Light","Eyes");
@@ -81,7 +101,6 @@ class HeroTest {
         assertEquals(1, Hero.getAll().size()); //one is left
         assertEquals(Hero.getAll().get(0).getId(), 2); //the one that was deleted has the id of 2. Why do we care?
     }
-
 
     @Test
     public void deleteAllHeroesDeletesAllHeroes() throws Exception {
