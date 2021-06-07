@@ -74,4 +74,7 @@ public class Hero {
     public static void clearAllHeroes(){
         instances.clear();
     }
+    public void deleteHero(){
+        instances.remove(id-1); //same reason
+    }
 }
