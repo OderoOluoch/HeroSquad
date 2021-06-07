@@ -8,19 +8,22 @@ public class Squad {
     private String cause;
     private int id;
     private ArrayList<Hero> heroes;
+    private static ArrayList<Squad> instances = new ArrayList<>();
 
     public Squad(String name, int size, String cause){
         this.name = name;
         this.size = size;
         this.cause = cause;
+        this.id = instances.size();
+        instances.add(this);
+    }
+
+    public static ArrayList<Squad> getAll() {
+        return instances;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -59,7 +62,19 @@ public class Squad {
         heroes.add(hero);
     }
 
+    public static Squad findById(int id){
+        return instances.get(id-1);
+    }
 
+    public void updateName(String newName) {
+        this.name = newName;
+    }
 
+    public static void clearAllSquads(){
+        instances.clear();
+    }
+    public void deleteSquad(){
+        instances.remove(id-1); //same reason
+    }
 
 }
