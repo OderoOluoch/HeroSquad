@@ -18,4 +18,5 @@ public class Hero {
         this.id = id;
         instances.add(this);
     }
+
 }
