@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class HeroTest {
 
@@ -58,6 +59,18 @@ class HeroTest {
         Hero hero = new Hero("Odero",14,"Light","Eyes");
         Hero heroTwo = new Hero("Oluoch",15,"Fire","Tail");
         assertEquals(2,Hero.getAll().size());
+    }
+
+    @Test
+    public void AllHeroesContainsAllHeroes_true(){
+        Hero hero = new Hero("Odero",14,"Light","Eyes");
+        Hero heroTwo = new Hero("Oluoch",15,"Fire","Tail");
+        assertTrue(Hero.getAll().contains(hero));
+        assertTrue(Hero.getAll().contains(heroTwo));
+    }
+
+    public Hero setUpNewHero(){
+        return new Hero("Odero",14,"Light","Eyes");
     }
 
 }
