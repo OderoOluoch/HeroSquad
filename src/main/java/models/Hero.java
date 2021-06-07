@@ -66,4 +66,12 @@ public class Hero {
     public void setId(int id) {
         this.id = id;
     }
+
+    public static ArrayList<Hero> getAll(){
+        return instances;
+    }
+
+    public static void clearAllHeroes(){
+        instances.clear();
+    }
 }
