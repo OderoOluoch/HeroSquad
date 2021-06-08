@@ -122,8 +122,8 @@ public class App {
         get("/squads/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfSquadToFind = Integer.parseInt(req.params("id")); //pull id - must match route segment
-            Hero foundSquare = Hero.findById(idOfSquadToFind); //use it to find post
-            model.put("squad", foundSquare); //add it to model for template to display
+            Squad foundSquad = Squad.findById(idOfSquadToFind); //use it to find post
+            model.put("squad", foundSquad); //add it to model for template to display
             return new ModelAndView(model, "squadDetail.hbs"); //individual post page.
         }, new HandlebarsTemplateEngine());
 
@@ -150,7 +150,7 @@ public class App {
         //get: delete an individual post
         get("/squads/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int idOfSquadToDelete = Integer.parseInt(req.params("id")); //pull id - must match route segment
+            int idOfSquadToDelete = Integer.parseInt(req.params(":id")); //pull id - must match route segment
             Squad deleteSquad = Squad.findById(idOfSquadToDelete); //use it to find post
             deleteSquad.deleteSquad();
             return new ModelAndView(model, "squadSuccess.hbs");
