@@ -14,3 +14,14 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.hero {
+    margin-top: 8%;
+    background-image: url("/public/images/heroList.jpg");
+    background-size: cover;
+}
+.squad {
+    margin-top: 8%;
+    background-image: url("/public/images/squad.png");
+    background-size: cover;
+}
