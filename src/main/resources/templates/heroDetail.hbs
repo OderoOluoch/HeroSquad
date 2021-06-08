@@ -2,15 +2,19 @@
 
     <p>Content:</p>
 
-    <p>{{ hero.name }}</p>
-    <h5>Created At:</h5>
-    <p> {{ hero.age }}</p>
-    <p> {{ hero.power }}</p>
-    <p> {{ hero.weakness }}</p>
-    <h5>Post status:</h5>
 
-    <a href="/heroes/{{hero.id}}/update">Edit this post</a><br>
-    <a href="/heroes/{{hero.id}}/delete">DELETE this post (no undo)</a>
+    <div class="card">
+        <div class="card-header">
+            hero.name
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">hero.power </h5>
+            <p class="card-text">hero.weakness</p>
+            <a href="/heroes/{{hero.id}}/update" class="btn btn-primary">Edit</a>
+            <a href="/heroes/{{hero.id}}/delete" class="btn btn-primary">Delete</a>
+        </div>
+    </div>
+
 
 <!--    <p>-->
 <!--        {{#if post.published }}-->

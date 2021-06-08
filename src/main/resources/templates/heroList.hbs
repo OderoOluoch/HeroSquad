@@ -4,7 +4,17 @@
     {{#if heroes}}
         <p>Current Heroes:</p>
         {{#each heroes }}
-            <p>{{ name }} <a href="/heroes/{{id}}">read more...</a></p>
+            <div class="card">
+                <div class="card-header">
+                    Quote
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p> {{ name }} </p>
+                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
         {{/each}}
     {{else}}
         <p>No heroes to show!</p>
@@ -13,6 +23,8 @@
     <div>
         <p><a href="/heroes/new">Create new Hero</a></p>
     </div>
+
+
 
 
 
