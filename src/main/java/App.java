@@ -75,6 +75,13 @@ public class App {
             return new ModelAndView(model, "heroSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
+
+        //post: process a form to update a post
+        post("/heroes/:id/addBranch", (req, res) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "heroSuccess.hbs");
+        }, new HandlebarsTemplateEngine());
+
         //get: delete an individual post
         get("/heroes/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
