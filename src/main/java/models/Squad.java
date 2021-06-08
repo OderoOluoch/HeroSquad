@@ -11,11 +11,12 @@ public class Squad {
     private static ArrayList<Squad> instances = new ArrayList<>();
 
     public Squad(String name, int size, String cause){
+        instances.add(this);
         this.name = name;
         this.size = size;
         this.cause = cause;
         this.id = instances.size();
-        instances.add(this);
+
     }
 
     public static ArrayList<Squad> getAll() {

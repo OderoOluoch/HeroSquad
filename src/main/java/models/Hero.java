@@ -11,12 +11,12 @@ public class Hero {
     private int id;
 
     public Hero(String name, int age,String weakness, String powers){
+        instances.add(this);
         this.name = name;
         this.age = age;
         this.weakness = weakness;
         this.powers = powers;
         this.id = instances.size();
-        instances.add(this);
     }
 
     public String getName() {
@@ -63,9 +63,6 @@ public class Hero {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public static ArrayList<Hero> getAll(){
         return instances;
