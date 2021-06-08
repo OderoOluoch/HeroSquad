@@ -34,12 +34,15 @@ public class App {
         post("/heroes/new", (req, res) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
 
-            String name = req.queryParams("content");
+            String name = req.queryParams("name");
+            String power = req.queryParams("power");
+            String weakness = req.queryParams("weakness");
             int age = Integer.parseInt(req.queryParams("age"));
 
-//            Hero newHero = new Hero(name,age,);
-//            model.put("hero", newHero);
-            return new ModelAndView(model, "success.hbs");
+            Hero newHero = new Hero(name,age,weakness,power);
+            model.put("hero", newHero);
+
+            return new ModelAndView(model, "heroSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
 
