@@ -1,10 +1,12 @@
 body, html {
     height: 100%;
+    color: white;
 }
+a { color: white; }
 
 .bg {
     /* The image used */
-    background-image: url('/public/images/hero.jpg');
+    background-image: url("/images/hero.jpg");
 
     /* Full height */
     height: 100%;
@@ -17,11 +19,11 @@ body, html {
 
 .hero {
     margin-top: 8%;
-    background-image: url("/public/images/heroList.jpg");
+    background-image: url("/images/heroList.jpg");
     background-size: cover;
 }
 .squad {
     margin-top: 8%;
-    background-image: url("/public/images/squad.png");
+    background-image: url("/images/squad.png");
     background-size: cover;
 }
