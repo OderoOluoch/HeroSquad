@@ -4,7 +4,7 @@ body, html {
 
 .bg {
     /* The image used */
-    background-image: url("/images/hero.jpg");
+    background-image: url('/public/images/hero.jpg');
 
     /* Full height */
     height: 100%;
