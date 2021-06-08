@@ -33,6 +33,10 @@ body, html {
     width: 700px;
 }
 
+.whiteone, .whitetwo, .whiteone a{
+    color:white;
+}
+
 .hero-form{
     margin-top: 8%;
     padding-top: 8%;
