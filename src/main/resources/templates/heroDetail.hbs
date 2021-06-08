@@ -1,27 +1,24 @@
 {{#partial "content"}}
 
-    <p>Content:</p>
+    </br>
+    </br>
+    </br>
+    <p>Hero details:</p>
 
-    <p>{{ hero.name }}</p>
-    <h5>Created At:</h5>
-    <p> {{ hero.age }}</p>
-    <p> {{ hero.power }}</p>
-    <p> {{ hero.weakness }}</p>
-    <h5>Post status:</h5>
-
-    <a href="/heroes/{{hero.id}}/update">Edit this post</a><br>
-    <a href="/heroes/{{hero.id}}/delete">DELETE this post (no undo)</a>
-
-<!--    <p>-->
-<!--        {{#if post.published }}-->
-<!--            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>  Published-->
-<!--        {{else}}-->
-<!--            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Draft-->
-<!--        {{/if}}-->
-
-<!--        <a href="/posts/{{post.id}}/update">Edit this post</a><br>-->
-<!--        <a href="/posts/{{post.id}}/delete">DELETE this post (no undo)</a>-->
-<!--    </p>-->
+    <div class="card">
+        <div class="card-header">Hero Name:
+            {{hero.name}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Hero Unique powers:  {{hero.power}} </h5>
+            <p class="card-text">Hero Unique weakness: {{ hero.weakness }}</p>
+<!--            <a href="/heroes/{{hero.id}}/update" class="btn btn-primary">Edit</a>-->
+<!--            <a href="/heroes/{{hero.id}}/delete" class="btn btn-primary">Delete</a>-->
+        </div>
+    </div>
+    <div class="detail">
+        <img  src='/images/black.jpg' alt='A photo of a mountain.' width="1110" height="700" />
+    </div>
 
 {{/partial}}
 
