@@ -29,6 +29,10 @@ body, html {
     height: 400px;
 }
 
+.detail{
+    width: 700px;
+}
+
 .hero-form{
     margin-top: 8%;
     padding-top: 8%;
