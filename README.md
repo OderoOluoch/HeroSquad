@@ -5,6 +5,8 @@
 
 ## Description
 
+This is a web-based Java Application where a user can create a squad, create heroes, and Add heroes to a squad, with a cause.
+
 
 
 
