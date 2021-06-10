@@ -34,13 +34,13 @@ public class App {
             return new ModelAndView(model, "heroList.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //get: show new post form
+        //get: show new hero form
         get("/heroes/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "heroForm.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/heroes/new", (req, res) -> { //URL to make new post on POST route
+        post("/heroes/new", (req, res) -> { //URL to make new hero on POST route
             Map<String, Object> model = new HashMap<>();
 
             String name = req.queryParams("name");
@@ -64,7 +64,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-        //get: show a form to update a post
+        //get: show a form to update a hero
         get("/heroes/:id/update", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfHeroToEdit = Integer.parseInt(req.params("id"));
@@ -73,7 +73,7 @@ public class App {
             return new ModelAndView(model, "heroForm.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //post: process a form to update a post
+        //post: process a form to update a hero
         post("/heroes/:id/update", (req, res) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
             String newName = req.queryParams("name");
@@ -84,13 +84,13 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-        //post: process a form to update a post
+        //post: process a form to update a hero
         post("/heroes/:id/addBranch", (req, res) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "heroSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //get: delete an individual post
+        //get: delete an individual hero
         get("/heroes/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfHeroToDelete = Integer.parseInt(req.params("id")); //pull id - must match route segment
@@ -99,7 +99,7 @@ public class App {
             return new ModelAndView(model, "heroSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //get: delete all posts
+        //get: delete all heroes
         get("/heroes/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             Hero.clearAllHeroes();
@@ -144,7 +144,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
-        //get: show a form to update a post
+        //get: show a form to update a squad
         get("/squads/:id/update", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfSquadToEdit = Integer.parseInt(req.params("id"));
@@ -153,7 +153,7 @@ public class App {
             return new ModelAndView(model, "squadForm.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //post: process a form to update a post
+        //post: process a form to update a squad
         post("/squads/:id/update", (req, res) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<>();
             String newName = req.queryParams("name");
@@ -163,7 +163,7 @@ public class App {
             return new ModelAndView(model, "squadSuccess.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //get: delete an individual post
+        //get: delete an individual squad
         get("/squads/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfSquadToDelete = Integer.parseInt(req.params(":id")); //pull id - must match route segment
